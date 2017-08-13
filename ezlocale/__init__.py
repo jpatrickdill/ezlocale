@@ -26,7 +26,7 @@ import googletrans
 from .langs import language
 
 __author__ = "Patrick Dill"
-__version__ = "0.1"
+__version__ = "0.2"
 
 DEST = language.EN
 
@@ -72,5 +72,5 @@ def clear_cache():
     """
     Clears translator caches.
     """
-    for translator in _translators.values():
-        translator.cache.clear()
+    for name in list(_translators.keys()):
+        del _translators[name]
