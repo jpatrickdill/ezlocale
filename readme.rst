@@ -5,11 +5,11 @@ EzLocale is a language library that makes translation easier (hence the name).
 
 Throw gettext in the trash, because you'll never need to manually translate again.
 
-``pip install ezlocale``
+``$ pip install ezlocale``
 
 
-Using EzLocale
---------------
+Basic Usage
+-----------
 
 .. code-block:: python
 
@@ -26,9 +26,8 @@ Using EzLocale
     print(_("Hello, %s!" % name))
 
 
-¿Cuál es tu nombre? > Patrick
-
-¡Hola, Patrick!
+``¿Cuál es tu nombre? > Patrick``
+``¡Hola, Patrick!``
 
 
 You can also use a different language with each call.
