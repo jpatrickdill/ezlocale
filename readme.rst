@@ -5,6 +5,8 @@ EzLocale is a language library that makes translation easier (hence the name).
 
 Throw gettext in the trash, because you'll never need to manually translate again.
 
+``pip install ezlocale``
+
 
 Using EzLocale
 --------------
@@ -23,12 +25,11 @@ Using EzLocale
 
     print(_("Hello, %s!" % name))
 
-Example usage:
 
-``
 ¿Cuál es tu nombre? > Patrick
+
 ¡Hola, Patrick!
-``
+
 
 You can also use a different language with each call.
 
@@ -37,6 +38,7 @@ You can also use a different language with each call.
     >>> _("Hello!", ezlocale.language.LA)
     'Salve!'
 
-EzLocale uses an LFU cache for each language to make sure resources aren't wasted. http://pypi.org/project/faste/
+EzLocale uses an LFU cache for each language to make sure resources aren't wasted.
+http://github.com/reshanie/faste/
 
 It's powered by google translate, with the googletrans module. https://github.com/ssut/py-googletrans
