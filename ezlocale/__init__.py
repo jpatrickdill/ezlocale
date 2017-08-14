@@ -26,7 +26,7 @@ import googletrans
 from .langs import language, get_language
 
 __author__ = "Patrick Dill"
-__version__ = "0.3"
+__version__ = "0.5"
 
 DEST = language.EN
 
@@ -55,20 +55,23 @@ class Translator(object):
         return self.cache[text]
 
 
-def gettext(text, dest=None):
+def gettext(text, dest=None, src=language.EN):
     """
     Gets text in specified language.
 
     :param text: Text to translate
-    :param dest: (keyword) Destination language. Defaults to :attr:`ezlocale.DEST`
+    :param dest: (keyword) Destination language. Defaults to ezlocale.DEST
+    :param src: (keyword) Source language. Defaults to English
     :returns: Translated text
     """
     dest = dest or DEST
 
-    if dest not in _translators:
-        _translators[dest] = Translator(dest.value)
+    key = (src, dest)
 
-    return _translators[dest].translate(str(text))
+    if key not in _translators:
+        _translators[key] = Translator(dest.value, src=src.value)
+
+    return _translators[key].translate(str(text))
 
 
 def clear_cache():

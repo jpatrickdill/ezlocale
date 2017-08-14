@@ -33,14 +33,18 @@ Basic Usage
 ``¡Hola, Patrick!``
 
 
+To get a language by its name, just use ``ezlocale.get_language(name)`` (case insensitive)
+
 You can also use a different language with each call.
 
 .. code-block:: python
 
-    >>> _("Hello!", ezlocale.language.LA)
+    >>> ezlocale.gettext("Hello!", dest=ezlocale.get_language("Latin"))
     'Salve!'
+    >>> ezlocale.gettext("¡Hola!", dest=ezlocale.language.EN, src=ezlocale.language.AUTO)  # anything to english
+    'Hello!'
 
-To get a language by its name, just use ``ezlocale.get_language(name)`` (case insensitive)
+To
 
 
 To clear the translation cache, use ``ezlocale.clear_cache()``

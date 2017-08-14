@@ -128,10 +128,12 @@ class language(Enum):
     HAW = "haw"
     HMN = "hmn"
     MT = "mt"
+    AUTO = "auto"
 
 
 
 _LANGUAGES = {
+    "auto": language.AUTO,
     "afrikaans": language.AF,
     "albanian": language.SQ,
     "amharic": language.AM,
