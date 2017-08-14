@@ -23,10 +23,10 @@ SOFTWARE.
 import faste
 import googletrans
 
-from .langs import language
+from .langs import language, get_language
 
 __author__ = "Patrick Dill"
-__version__ = "0.2"
+__version__ = "0.3"
 
 DEST = language.EN
 
@@ -35,6 +35,9 @@ _translators = {}
 
 class Translator(object):
     def __init__(self, dest, src="en", max_cache_size=128):
+        if dest is None:
+            raise TypeError("No destination language specified.")
+
         self.translator = googletrans.Translator()
 
         self.src = src
@@ -58,7 +61,7 @@ def gettext(text, dest=None):
 
     :param text: Text to translate
     :param dest: (keyword) Destination language. Defaults to :attr:`ezlocale.DEST`
-    :return:
+    :returns: Translated text
     """
     dest = dest or DEST
 

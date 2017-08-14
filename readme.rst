@@ -40,7 +40,10 @@ You can also use a different language with each call.
     >>> _("Hello!", ezlocale.language.LA)
     'Salve!'
 
-EzLocale uses an LFU cache for each language to make sure resources aren't wasted.
-http://github.com/reshanie/faste/
+To get a language by its name, just use ``ezlocale.get_language(name)`` (case insensitive)
+
 
 To clear the translation cache, use ``ezlocale.clear_cache()``
+
+EzLocale uses an LFU cache for each language to make sure resources aren't wasted.
+http://github.com/reshanie/faste/
